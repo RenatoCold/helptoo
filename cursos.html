@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HELP TOO | Ações que salvam vidas</title>
+    <title>Cursos | HELP TOO</title>
     
-    <link rel="icon" type="image/jpeg" href="assets/img/logohelptoo.jpeg">
-    
+    <link rel="icon" type="image/png" href="assets/img/logohelptoo.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
@@ -18,7 +17,7 @@
     <header>
         <nav class="navbar">
             <a href="index.html" class="brand">
-                <img src="assets/img/logohelptoo.jpeg" alt="HELP TOO - Ações que salvam vidas" class="logo-principal">
+                <img src="assets/img/logohelptoo.jpeg" alt="HELP TOO - Ações que salvam vidas" class="logo-principal" style="height: 110px;">
             </a>
             
             <div class="menu-hamburguer" id="menu-mobile">
@@ -26,75 +25,62 @@
             </div>
             
             <ul class="nav-links" id="nav-list">
-                <li><a href="index.html" class="active">Início</a></li>
+                <li><a href="index.html">Início</a></li>
                 <li><a href="sobre.html">Sobre Nós</a></li>
-                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="cursos.html" class="active">Cursos</a></li>
                 <li><a href="#" id="btn-contato-nav">Contato</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="hero-banner" id="inicio">
-            <!-- Adicionada a animação no texto principal do banner -->
-            <div class="hero-content animar-scroll">
-                <h1>Ações que <span>salvam vidas</span></h1>
-                <h2>Mais do que treinar, nós transformamos.</h2>
-                <p>Preparando equipes de saúde para atuar com segurança, padronização e alta performance em cenários críticos.</p>
-                <a href="#destaques" class="btn-primario">Conhecer os Cursos</a>
+        <section class="hero-interna">
+            <div class="container text-center">
+                <h1>Nossas <span>Soluções</span></h1>
+                <p>Treinamentos práticos e realísticos para excelência no atendimento de emergência.</p>
             </div>
         </section>
 
-        <section class="cursos-vitrine" id="destaques">
+        <section class="cursos-vitrine">
             <div class="container">
-                <!-- Animação no título da seção -->
-                <div class="cabecalho-secao animar-scroll">
-                    <h2>Capacitações em <span>Destaque</span></h2>
-                    <p>Conheça nossos treinamentos mais procurados para equipes de saúde</p>
-                </div>
-                
                 <div class="grid-cursos">
-                    <!-- Cards com efeito cascata (atraso-1 até atraso-4) -->
-                    <article class="card-curso animar-scroll atraso-1">
+                    
+                    <article class="card-curso">
                         <img src="assets/img/cursos1.png" alt="Treinamento BLS" class="img-curso" style="object-position: top;">
                         <div class="card-conteudo">
                             <h3>Suporte Básico de Vida (BLS)</h3>
-                            <p>Treinamento prático intensivo focado nas diretrizes mais atualizadas de reanimação.</p>
-                            <a href="cursos.html" class="btn-secundario">Saber Mais</a>
+                            <p>Treinamento prático intensivo focado nas diretrizes mais atualizadas de reanimação cardiopulmonar e desobstrução de vias aéreas.</p>
+                            <a href="#" class="btn-secundario" onclick="document.getElementById('modal-contato').classList.add('active');">Solicitar Orçamento</a>
                         </div>
                     </article>
 
-                    <article class="card-curso animar-scroll atraso-2">
+                    <article class="card-curso">
                         <img src="assets/img/cursos2.png" alt="Gestão de Emergência" class="img-curso">
                         <div class="card-conteudo">
                             <h3>Rotinas de Emergência</h3>
-                            <p>Padronização de fluxos para equipes multidisciplinares no pronto-atendimento.</p>
-                            <a href="cursos.html" class="btn-secundario">Saber Mais</a>
+                            <p>Padronização de fluxos e condutas para equipes multidisciplinares no pronto-atendimento, visando a segurança total do paciente.</p>
+                            <a href="#" class="btn-secundario" onclick="document.getElementById('modal-contato').classList.add('active');">Solicitar Orçamento</a>
                         </div>
                     </article>
 
-                    <article class="card-curso animar-scroll atraso-3">
+                    <article class="card-curso">
                         <img src="assets/img/cursos3.png" alt="Auditoria em Saúde" class="img-curso" style="object-position: top;">
                         <div class="card-conteudo">
                             <h3>Auditoria e Qualidade</h3>
-                            <p>Preparando profissionais para avaliar e melhorar processos assistenciais.</p>
-                            <a href="cursos.html" class="btn-secundario">Saber Mais</a>
+                            <p>Preparando profissionais para avaliar e melhorar processos assistenciais com foco na redução de eventos adversos.</p>
+                            <a href="#" class="btn-secundario" onclick="document.getElementById('modal-contato').classList.add('active');">Solicitar Orçamento</a>
                         </div>
                     </article>
 
-                    <article class="card-curso animar-scroll atraso-4">
+                    <article class="card-curso">
                         <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Simulação Realística" class="img-curso">
                         <div class="card-conteudo">
                             <h3>Simulação Realística</h3>
-                            <p>Treinamento imersivo em cenários de alta complexidade e tensão para equipes.</p>
-                            <a href="cursos.html" class="btn-secundario">Saber Mais</a>
+                            <p>Treinamento imersivo em cenários de alta complexidade e tensão para equipes que precisam tomar decisões rápidas.</p>
+                            <a href="#" class="btn-secundario" onclick="document.getElementById('modal-contato').classList.add('active');">Solicitar Orçamento</a>
                         </div>
                     </article>
-                </div>
 
-                <!-- Animação no botão inferior -->
-                <div class="acoes-vitrine animar-scroll">
-                    <a href="cursos.html" class="btn-outline">Ver Todos os Cursos</a>
                 </div>
             </div>
         </section>
@@ -122,7 +108,7 @@
             <p>Escolha a melhor forma para falar com nossa equipe comercial.</p>
             
             <div class="opcoes-contato">
-                <a href="https://wa.me/5515996499607" target="_blank" class="btn-whatsapp">
+                <a href="https://wa.me/5515599649-9607" target="_blank" class="btn-whatsapp">
                     Chamar no WhatsApp
                 </a>
                 <a href="mailto:contato@helptoo.com.br" class="btn-email">
