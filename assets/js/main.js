@@ -68,3 +68,30 @@ const observadorDeScroll = new IntersectionObserver((entradas) => {
 elementosParaAnimar.forEach((elemento) => {
     observadorDeScroll.observe(elemento);
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const campoBusca = document.getElementById('campo-busca');
+    const cards = document.querySelectorAll('.card-curso'); 
+
+    if (campoBusca) {
+        campoBusca.addEventListener('input', () => {
+            const termo = campoBusca.value.toLowerCase().trim();
+            
+            cards.forEach(card => {
+                const titulo = card.querySelector('h3').textContent.toLowerCase();
+                const descricao = card.querySelector('p').textContent.toLowerCase();
+                
+                if (titulo.includes(termo) || descricao.includes(termo)) {
+                    card.style.display = 'flex';
+                    // Força o navegador a registrar a animação de surgimento suave
+                    requestAnimationFrame(() => {
+                        card.classList.add('com-efeito');
+                    });
+                } else {
+                    card.style.display = 'none';
+                    card.classList.remove('com-efeito');
+                }
+            });
+        });
+    }
+});
