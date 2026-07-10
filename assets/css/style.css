@@ -30,27 +30,30 @@ body {
     line-height: 1.6;
 }
 
-/* =========================================
-   CABEÇALHO E NAVEGAÇÃO (HEADER / NAV)
-   ========================================= */
+/* ==========================================================================
+   🎯 HEADER PREMIUM: BUSCA NO CENTRO ABSOLUTO (SEM DESALINHAR)
+   ========================================================================== */
 header {
     background: #ffffff;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
     z-index: 100;
+    width: 100%;
 }
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Empurra a logo para a esquerda e o menu para a direita */
     align-items: center;
-    padding: 15px 5%;
+    padding: 5px 5%;
     max-width: 1400px;
     margin: 0 auto;
-    gap: 40px;
+    position: relative !important;   /* 🌟 Torna-se a referência para o centro absoluto */
+    height: 95px;                   /* Deixa uma altura fixa confortável para o header */
 }
 
+/* 1. LOGO FIXADA NA ESQUERDA */
 .brand {
     display: flex;
     align-items: center;
@@ -58,19 +61,55 @@ header {
 }
 
 .logo-principal {
-    height: 135px; /* Tamanho aumentado no PC */
+    height: 90px;
     width: auto;
     display: block;
 }
 
-.nav-links {
-    margin-left: 50px;
+/* 2. BARRA DE PESQUISA CRAVADA NO CENTRO DA TELA */
+.busca-container {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important; /* 🌟 Mágica que garante o centro real da página */
+    max-width: 320px; 
+    width: 100%;
     display: flex;
-    gap: 20px;
+    align-items: center;
+    z-index: 10;
+}
+
+#campo-busca {
+    width: 100%;
+    padding: 10px 40px 10px 16px;
+    border: 1px solid #E5E9F0;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    outline: none;
+    transition: all 0.2s ease;
+    background-color: #FFFFFF;
+}
+
+#campo-busca:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0, 92, 168, 0.1);
+}
+
+.icone-busca {
+    position: absolute;
+    right: 15px;
+    font-size: 0.85rem;
+    color: #A0AEC0;
+    pointer-events: none;
+}
+
+/* 3. MENUS FIXADOS NA DIREITA */
+.nav-links {
+    display: flex;
+    gap: 25px;
     list-style: none;
     padding: 0;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0;
+    align-items: center;
 }
 
 .nav-links a {
@@ -86,46 +125,12 @@ header {
     color: var(--secondary);
 }
 
+/* ÍCONE MOBILE */
 .menu-hamburguer {
     display: none;
     font-size: 28px;
     cursor: pointer;
     color: var(--primary);
-}
-
-/* BARRA DE BUSCA NA NAVBAR */
-.busca-container {
-    position: relative;
-    max-width: 280px; 
-    width: 100%;
-    margin-left: auto; 
-    margin-right: 20px; 
-}
-
-#campo-busca {
-    width: 100%;
-    padding: 12px 40px 12px 16px;
-    border: 1px solid #E5E9F0;
-    border-radius: 25px;
-    font-size: 0.95rem;
-    outline: none;
-    transition: all 0.2s ease;
-    background-color: #FFFFFF;
-}
-
-#campo-busca:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(0, 92, 168, 0.1);
-}
-
-.icone-busca {
-    position: absolute;
-    right: 18px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 0.9rem;
-    color: #A0AEC0;
-    pointer-events: none;
 }
 
 /* =========================================
@@ -623,4 +628,180 @@ footer {
         opacity: 1;
         transform: translateY(0) scale(1);
     }
+}
+
+/* ==========================================================================
+   🚨 CONTROLE TOTAL E DESIGN PREMIUM DO MODAL DE DETALHES (ANTI-QUEBRA)
+   ========================================================================== */
+.modal-curso {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(0, 0, 0, 0.8) !important; /* Fundo escuro transparente */
+    backdrop-filter: blur(5px) !important;      /* Efeito borrado ao fundo */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 99999 !important;                  /* Fica na frente de absolutamente tudo */
+    opacity: 0 !important;                      /* Começa invisível */
+    visibility: hidden !important;              /* Começa desativado */
+    transition: opacity 0.3s ease, visibility 0.3s ease !important;
+}
+
+/* Estado ativo disparado pelo JavaScript */
+.modal-curso.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* A caixinha branca interna que segura o conteúdo */
+.modal-curso-box {
+    background: #ffffff !important;
+    width: 90% !important;
+    max-width: 550px !important;               /* Limita a largura para ficar elegante */
+    border-radius: 12px !important;            /* Bordas arredondadas modernas */
+    overflow: hidden !important;               /* Garante que a foto respeite o arredondamento */
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4) !important;
+}
+
+/* ==========================================================================
+   📸 CONTAINER DA FOTO E SETAS FLUTUANTES (CARROSSEL)
+   ========================================================================== */
+.carrossel-container {
+    position: relative !important;
+    width: 100% !important;
+    height: 320px !important;                  /* Altura ideal para valorizar a imagem */
+    background: #111111 !important;
+    overflow: hidden !important;
+}
+
+#modal-img-curso {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;              /* Não deixa a imagem distorcer ou amassar */
+}
+
+/* Botões das setas (Esquerda e Direita) */
+.seta-carrossel {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;    /* Centraliza perfeitamente no meio vertical da foto */
+    background: rgba(0, 0, 0, 0.4) !important; /* Fundo escuro sutil */
+    color: #ffffff !important;
+    border: none !important;
+    font-size: 18px !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;             /* Deixa o botão perfeitamente redondo */
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s ease !important;
+    z-index: 99 !important;                    /* Garante que fique acima da imagem */
+}
+
+/* Efeito Hover nas setas (Fica vermelho HELP TOO) */
+.seta-carrossel:hover {
+    background: var(--secondary) !important;
+    transform: translateY(-50%) scale(1.1) !important; /* Dá um leve zoom ao passar o mouse */
+}
+
+.seta-esquerda {
+    left: 15px !important;                     /* Afastamento da borda esquerda */
+}
+
+.seta-direita {
+    right: 15px !important;                    /* Afastamento da borda direita */
+}
+
+/* Botão de fechar (X) no topo direito da imagem */
+.btn-fechar-curso {
+    position: absolute !important;
+    top: 12px !important;
+    right: 15px !important;
+    font-size: 30px !important;
+    color: #ffffff !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    border: none !important;
+    border-radius: 50% !important;
+    width: 36px !important;
+    height: 36px !important;
+    cursor: pointer !important;
+    z-index: 100 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: background 0.2s !important;
+}
+
+.btn-fechar-curso:hover {
+    background: var(--secondary) !important;
+}
+
+/* ==========================================================================
+   📝 ÁREA DE TEXTOS E INFORMAÇÕES TÉCNICAS
+   ========================================================================== */
+.modal-curso-conteudo {
+    padding: 30px !important;                  /* Espaçamento interno confortável */
+    text-align: left !important;
+}
+
+.modal-curso-conteudo h3 {
+    font-size: 1.6rem !important;
+    margin-bottom: 12px !important;
+    color: var(--primary) !important;
+    font-weight: 800 !important;
+}
+
+.modal-curso-conteudo p {
+    font-size: 0.95rem !important;
+    color: var(--dark) !important;
+    margin-bottom: 20px !important;
+}
+
+/* Caixa com fundo cinza e borda vermelha para as especificações */
+.info-tecnicas-modal {
+    background: #F3F4F6 !important;
+    padding: 15px !important;
+    border-radius: 6px !important;
+    margin-bottom: 25px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    border-left: 4px solid var(--secondary) !important;
+}
+
+.info-tecnicas-modal p {
+    margin-bottom: 0 !important;
+    font-size: 0.95rem !important;
+    color: var(--dark) !important;
+}
+/* ==========================================================================
+   🎯 AJUSTE DE ALINHAMENTO DOS ÍCONES (CENTRALIZAÇÃO PERFEITA)
+   ========================================================================== */
+.btn-fechar-curso, 
+.seta-carrossel {
+    padding: 0 !important;          /* Remove paddings herdados que empurram o texto */
+    line-height: 1 !important;       /* Zera a altura da linha do caractere */
+    display: flex !important;
+    align-items: center !important;  /* Centraliza na vertical */
+    justify-content: center !important; /* Centraliza na horizontal */
+}
+
+/* ==========================================================================
+   🎯 AJUSTE MILIMÉTRICO DO X (CENTRO ABSOLUTO)
+   ========================================================================== */
+.btn-fechar-curso {
+    font-size: 22px !important;    /* Reduz o símbolo para dar área de respiro interna */
+    line-height: 0 !important;       /* Reseta a base tipográfica do caractere */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding-bottom: 2px !important;  /* Empurra o símbolo levemente para baixo, matando o desalinhamento */
 }

@@ -17,7 +17,7 @@
     <header>
         <nav class="navbar">
             <a href="index.html" class="brand">
-                <img src="assets/img/logohelptoo.jpeg" alt="HELP TOO - Ações que salvam vidas" class="logo-principal" style="height: 110px;">
+                <img src="assets/img/logohelptoo.jpeg" alt="HELP TOO - Ações que salvam vidas" class="logo-principal">
             </a>
             
             <div class="menu-hamburguer" id="menu-mobile">
@@ -49,44 +49,72 @@
         <section class="cursos-vitrine">
             <div class="container">
                 <div class="grid-cursos">
-                    
-                    <article class="card-curso">
-                        <img src="assets/img/cursos1.png" alt="Treinamento BLS" class="img-curso" style="object-position: top;">
+
+                <!-- CARD 1: BLS -->
+                <div class="card-curso">
+                    <div class="area-clicavel" onclick="abrirDetalhes('bls')" style="cursor: pointer;">
+                        <img src="assets/img/cursos1.png" class="img-curso" alt="Curso BLS" style="object-position: top;">
                         <div class="card-conteudo">
                             <h3>Suporte Básico de Vida (BLS)</h3>
-                            <p>Treinamento prático intensivo focado nas diretrizes mais atualizadas de reanimação cardiopulmonar e desobstrução de vias aéreas.</p>
-                            <a href="#" class="btn-secundario" onclick="document.getElementById('modal-contato').classList.add('active');">Solicitar Orçamento</a>
+                            <p>Treinamento prático intensivo focado nas diretrizes internacionais de reanimação cardiopulmonar.</p>
                         </div>
-                    </article>
+                    </div>
+                    <div class="acoes-card" style="padding: 0 25px 25px 25px;">
+                        <button class="btn-secundario" onclick="abrirModalContato()" style="width: 100%;">
+                            Solicitar Orçamento
+                        </button>
+                    </div>
+                </div>
 
-                    <article class="card-curso">
-                        <img src="assets/img/cursos2.png" alt="Gestão de Emergência" class="img-curso">
-                        <div class="card-conteudo">
-                            <h3>Rotinas de Emergência</h3>
-                            <p>Padronização de fluxos e condutas para equipes multidisciplinares no pronto-atendimento, visando a segurança total do paciente.</p>
-                            <a href="#" class="btn-secundario" onclick="document.getElementById('modal-contato').classList.add('active');">Solicitar Orçamento</a>
-                        </div>
-                    </article>
-
-                    <article class="card-curso">
-                        <img src="assets/img/cursos3.png" alt="Auditoria em Saúde" class="img-curso" style="object-position: top;">
+                <!-- CARD 2: AUDITORIA -->
+                <div class="card-curso">
+                    <div class="area-clicavel" onclick="abrirDetalhes('auditoria')" style="cursor: pointer;">
+                        <img src="assets/img/cursos2.png" class="img-curso" alt="Curso de Auditoria" >
                         <div class="card-conteudo">
                             <h3>Auditoria e Qualidade</h3>
-                            <p>Preparando profissionais para avaliar e melhorar processos assistenciais com foco na redução de eventos adversos.</p>
-                            <a href="#" class="btn-secundario" onclick="document.getElementById('modal-contato').classList.add('active');">Solicitar Orçamento</a>
+                            <p>Preparando profissionais para avaliar e melhorar processos assistenciais com foco em segurança.</p>
                         </div>
-                    </article>
+                    </div>
+                    <div class="acoes-card" style="padding: 0 25px 25px 25px;">
+                        <button class="btn-secundario" onclick="abrirModalContato()" style="width: 100%;">
+                            Solicitar Orçamento
+                        </button>
+                    </div>
+                </div>
 
-                    <article class="card-curso">
-                        <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Simulação Realística" class="img-curso">
+                <!-- CARD 3: ROTINAS DE EMERGÊNCIA -->
+                <div class="card-curso">
+                    <div class="area-clicavel" onclick="abrirDetalhes('emergencia')" style="cursor: pointer;">
+                        <img src="assets/img/cursos3.png" class="img-curso" alt="Curso Rotinas de Emergência" style="object-position: top;">
+                        <div class="card-conteudo"> 
+                            <h3>Rotinas de Emergência</h3>
+                            <p>Capacitação voltada para o atendimento rápido e eficaz em situações críticas do ambiente hospitalar.</p>
+                        </div>
+                    </div>
+                    <div class="acoes-card" style="padding: 0 25px 25px 25px;">
+                        <button class="btn-secundario" onclick="abrirModalContato()" style="width: 100%;">
+                            Solicitar Orçamento
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 4: SIMULAÇÃO REALÍSTICA -->
+                <div class="card-curso">
+                    <div class="area-clicavel" onclick="abrirDetalhes('simulacao')" style="cursor: pointer;">
+                        <img src="assets/img/cursos3.png" class="img-curso" alt="Curso de Simulação Realística" style="object-position: top;">
                         <div class="card-conteudo">
                             <h3>Simulação Realística</h3>
-                            <p>Treinamento imersivo em cenários de alta complexidade e tensão para equipes que precisam tomar decisões rápidas.</p>
-                            <a href="#" class="btn-secundario" onclick="document.getElementById('modal-contato').classList.add('active');">Solicitar Orçamento</a>
+                            <p>Treinamentos práticos com cenários controlados e simuladores para reproduzir casos reais de atendimento.</p>
                         </div>
-                    </article>
+        </div>
+        <div class="acoes-card" style="padding: 0 25px 25px 25px;">
+            <button class="btn-secundario" onclick="abrirModalContato()" style="width: 100%;">
+                Solicitar Orçamento
+            </button>
+        </div>
+    </div>
 
-                </div>
+</div>
             </div>
         </section>
     </main>
@@ -119,6 +147,37 @@
                 <a href="mailto:contato@helptoo.com.br" class="btn-email">
                     Enviar E-mail
                 </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="modal-detalhes" class="modal-curso">
+        <div class="modal-curso-box">
+            <!-- Botão de fechar (X) -->
+            <button class="btn-fechar-curso" onclick="fecharDetalhes()">&times;</button>
+            
+            <!-- Carrossel de Fotos -->
+            <div class="carrossel-container">
+                <button class="seta-carrossel seta-esquerda" onclick="fotoAnterior()">&#10094;</button>
+                <img id="modal-img-curso" src="" alt="Imagem do Curso">
+                <button class="seta-carrossel seta-direita" onclick="proximaFoto()">&#10095;</button>
+            </div>
+
+            <!-- Textos do Curso -->
+            <div class="modal-curso-conteudo">
+                <h3 id="modal-titulo-curso">Nome do Curso</h3>
+                <p id="modal-descricao-curso">Descrição detalhada aqui...</p>
+                
+                <div class="info-tecnicas-modal">
+                    <p>⏱ <strong>Carga Horária:</strong> <span id="modal-horas-curso">-</span></p>
+                    <p>🎯 <strong>Público-Alvo:</strong> <span id="modal-publico-curso">-</span></p>
+                </div>
+
+                <!-- Botão para chamar seu modal de contato/orçamento original -->
+                <button onclick="abrirModalContato()" class="btn-primario" style="width: 100%;">
+                    Quero este treinamento
+                </button>
             </div>
         </div>
     </div>

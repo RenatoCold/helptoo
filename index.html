@@ -137,6 +137,37 @@
         </div>
     </div>
 
+   
+    <div id="modal-detalhes" class="modal-curso">
+        <div class="modal-curso-box">
+            <!-- Botão de fechar (X) -->
+            <button class="btn-fechar-curso" onclick="fecharDetalhes()">&times;</button>
+            
+            <!-- Carrossel de Fotos -->
+            <div class="carrossel-container">
+                <button class="seta-carrossel seta-esquerda" onclick="fotoAnterior()">&#10094;</button>
+                <img id="modal-img-curso" src="" alt="Imagem do Curso">
+                <button class="seta-carrossel seta-direita" onclick="proximaFoto()">&#10095;</button>
+            </div>
+
+            <!-- Textos do Curso -->
+            <div class="modal-curso-conteudo">
+                <h3 id="modal-titulo-curso">Nome do Curso</h3>
+                <p id="modal-descricao-curso">Descrição detalhada aqui...</p>
+                
+                <div class="info-tecnicas-modal">
+                    <p>⏱ <strong>Carga Horária:</strong> <span id="modal-horas-curso">-</span></p>
+                    <p>🎯 <strong>Público-Alvo:</strong> <span id="modal-publico-curso">-</span></p>
+                </div>
+
+                <!-- Botão para chamar seu modal de contato/orçamento original -->
+                <button onclick="abrirModalContato()" class="btn-primario" style="width: 100%;">
+                    Quero este treinamento
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script src="assets/js/main.js"></script>
 </body>
 </html>
